@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Qatar 2022</title>
+{% endblock %}
+
+{% block variable_content %}
+<div class="row">
+<div class="col-6">
+    {% include 'simulator.html' %}
+</div>
+<div class="col-6">
+    {% include 'table.html' %}
+</div>
+</div>
+{% endblock %}

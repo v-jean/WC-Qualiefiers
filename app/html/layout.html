@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+{% block body %}
+
+<body>
+    <div class="container py-2">
+        <div class="jumbotron py-4">
+            <h4 class="display-4">Qatar 2022 qualifiers</h4>
+            <p class="lead">Simulation</p>
+        </div>
+        {% block variable_content %}
+        {% endblock %}
+    </div>
+</body>
+{% endblock %}
+
+</html>
