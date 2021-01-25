@@ -1,9 +1,18 @@
 class Team:
-    def __init__(self):
-        self.__name = None
+    def __init__(self, name):
+        self.__name = name
         self.__points = 0
         self.__gf = 0
         self.__ga = 0
+        self.__pos = 0
+
+    @property
+    def pos(self):
+        return self.__pos
+    
+    @pos.setter
+    def pos(self, pos):
+        self.__pos = pos
 
     @property
     def name(self):
@@ -20,10 +29,6 @@ class Team:
     @property
     def goals_against(self):
         return self.__ga
-    
-    @name.setter
-    def name(self, name):
-        self.__name = name
     
     @points.setter
     def points(self, points):

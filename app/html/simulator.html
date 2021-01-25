@@ -1,57 +1,22 @@
+<form method="POST" action="{{ url_for('main.nextMatchDay', md=nextmd) }}">
 <div class="container">
+    {% for match in matches %}
     <div class="my-1 row justify-content-md-center">
-        <div class="col-6 col-lg-2 text-right lead">Perú</div>
+        <div class="col-6 col-lg-2 text-right lead">{{ match[0].name }}</div>
         <div class="col-2">
-            <input type="number" min="0" class="form-control">
+            <input name="{{ match[0].name }}" type="number" min="0" class="form-control">
         </div>
         <p class="lead text-center my-1">-</p>
         <div class="col-2">
-            <input type="number" min="0" class="form-control">
+            <input name="{{ match[1].name }}" type="number" min="0" class="form-control">
         </div>
-        <div class="col-6 col-lg-2 text-left lead">Argentina</div>
+        <div class="col-6 col-lg-2 text-left lead">{{ match[1].name }}</div>
     </div>
-    <div class="my-1 row justify-content-md-center">
-        <div class="col-6 col-lg-2 text-right lead">Colombia</div>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <p class="lead text-center my-1">-</p>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <div class="col-6 col-lg-2 text-left lead">Venezuela</div>
-    </div>
-    <div class="my-1 row justify-content-md-center">
-        <div class="col-6 col-lg-2 text-right lead">Paraguay</div>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <p class="lead text-center my-1">-</p>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <div class="col-6 col-lg-2 text-left lead">Brasil</div>
-    </div>
-    <div class="my-1 row justify-content-md-center">
-        <div class="col-6 col-lg-2 text-right lead">Bolivia</div>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <p class="lead text-center my-1">-</p>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <div class="col-6 col-lg-2 text-left lead">Chile</div>
-    </div>
-    <div class="my-1 row justify-content-md-center">
-        <div class="col-6 col-lg-2 text-right lead">Uruguay</div>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <p class="lead text-center my-1">-</p>
-        <div class="col-2">
-            <input type="number" min="0" class="form-control">
-        </div>
-        <div class="col-6 col-lg-2 text-left lead">Ecuador</div>
-    </div>
+    {% endfor %}
 </div>
+<div class="row my-4 justify-content-md-center">
+    {% if nextmd != 18 %}
+        <button type="submit" class="btn btn-sm btn-outline-info">Siguiente fecha ></button>
+    {% endif %}
+</div>
+</form>
